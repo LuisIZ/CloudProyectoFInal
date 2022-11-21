@@ -2,12 +2,12 @@ var solicitar_lista=  (event) => {
         fetch('https://6ojobc33j0.execute-api.us-east-1.amazonaws.com/prod/participacion/listar')
         .then(r => r.json())
         .then(json => {
-            var paticipaciones = json.paticipaciones
+            var participaciones = json.participaciones
 
             var table = document.getElementById("table_body");
 
             var c = 0;
-            for (let index = 0; index < paticipaciones.length; index++) {
+            for (let index = 0; index < participaciones.length; index++) {
 
                 c++;
 
@@ -22,10 +22,10 @@ var solicitar_lista=  (event) => {
     
 
                 cell1.innerHTML = c;
-                cell2.innerHTML = paticipaciones[index].codigo;
-                cell3.innerHTML = paticipaciones[index].nombre;
-                cell4.innerHTML = paticipaciones[index].puntos;  
-                cell5.innerHTML = paticipaciones[index].fecha;           
+                cell2.innerHTML = participaciones[index].codigo;
+                cell3.innerHTML = participaciones[index].nombre;
+                cell4.innerHTML = participaciones[index].puntos;  
+                cell5.innerHTML = participaciones[index].fecha;           
                 
             }
 
