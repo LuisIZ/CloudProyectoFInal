@@ -1,5 +1,5 @@
 var solicitar_lista=  (event) => {
-        fetch(' https://brl1qio8oc.execute-api.us-east-1.amazonaws.com/prod/pendiente/listar')
+        fetch('https://6ojobc33j0.execute-api.us-east-1.amazonaws.com/prod/participacion/listar')
         .then(r => r.json())
         .then(json => {
             var pendientes = json.pendientes
@@ -54,7 +54,7 @@ if(document.forms[0]){
             fecha : fecha
         }  
 
-        fetch('https://brl1qio8oc.execute-api.us-east-1.amazonaws.com/prod/pendiente/crear',{
+        fetch('https://6ojobc33j0.execute-api.us-east-1.amazonaws.com/prod/participacion/crear',{
             method : "POST",
             body: JSON.stringify(data)
         })
