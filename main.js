@@ -2,12 +2,12 @@ var solicitar_lista=  (event) => {
         fetch('https://6ojobc33j0.execute-api.us-east-1.amazonaws.com/prod/participacion/listar')
         .then(r => r.json())
         .then(json => {
-            var pendientes = json.pendientes
+            var paticipaciones = json.paticipaciones
 
             var table = document.getElementById("table_body");
 
             var c = 0;
-            for (let index = 0; index < pendientes.length; index++) {
+            for (let index = 0; index < paticipaciones.length; index++) {
 
                 c++;
 
@@ -22,10 +22,10 @@ var solicitar_lista=  (event) => {
     
 
                 cell1.innerHTML = c;
-                cell2.innerHTML = pendientes[index].id;
-                cell3.innerHTML = pendientes[index].Desc;
-                cell4.innerHTML = pendientes[index].curso;  
-                cell5.innerHTML = pendientes[index].fecha;           
+                cell2.innerHTML = paticipaciones[index].codigo;
+                cell3.innerHTML = paticipaciones[index].nombre;
+                cell4.innerHTML = paticipaciones[index].puntos;  
+                cell5.innerHTML = paticipaciones[index].fecha;           
                 
             }
 
@@ -42,15 +42,15 @@ if(document.forms[0]){
     event.preventDefault();
 
 
-        var id = document.getElementById("id").value;
-        var Desc = document.getElementById("desc").value;
-        var curso = document.getElementById("curso").value;
+        var codigo = document.getElementById("codigo").value;
+        var nombre = document.getElementById("nombre").value;
+        var puntos = document.getElementById("puntos").value;
         var fecha = document.getElementById("fecha").value;
 
         var data = {
-            id : parseInt(id),
-            Desc : Desc,
-            curso : curso,
+            codigo : parseInt(codigo),
+            nombre : nombre,
+            puntos : puntos,
             fecha : fecha
         }  
 
