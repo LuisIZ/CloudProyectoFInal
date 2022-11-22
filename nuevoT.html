@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Registro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">  
+            <div class="col mt-3">
+                <h1 class="float-left">Nueva Tarea</h1>  
+                <a href="index.html" class="btn btn-success float-right">Lista</a>   
+            </div>
+        </div>            
+        <div class="row">              
+            <div class="col">
+                <form class="needs-validation" novalidate="">
+
+
+                    <div class="mb-3">
+                      <label for="codigo_curso">CODIGO_CURSO</label>
+                      <input type="text" class="form-control" id="codigo_curso" placeholder="Ingrese el codigo del curso">
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="nombre_tarea">NOMBRE_TAREA</label>
+                        <input type="text" class="form-control" id="nombre_tarea" placeholder="Ingrese la nueva tarea" required="">
+                    </div>
+        
+                    <div class="mb-3">
+                      <label for="descripcion">DESCRIPCION</label>
+                      <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una descripcion de la tarea">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fecha_inicio">FECHA_INICIO</label>
+                        <input type="text" class="form-control" id="fecha_inicio" placeholder="Ingrese la fecha de inicio">
+                      </div>
+
+                    <div class="mb-3">
+                        <label for="fecha_limite">FECHA_LIMITE</label>
+                        <input type="text" class="form-control" id="fecha_limite" placeholder="Ingrese la fecha limite">
+                    </div>
+   
+
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="GUARDAR Y LISTAR">
+                </form>
+
+            </div>           
+        </div>              
+    </div>
+    <script src="main.js"></script>       
+</body>
+</html>
