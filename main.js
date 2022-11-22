@@ -51,7 +51,7 @@ if(document.forms[0]){
         var fecha_ultimo_puntaje = document.getElementById("fecha_ultimo_puntaje").value;
 
         var data = {
-            codigo_curso : parseInt(codigo_curso),
+            codigo_curso : codigo_curso,
             codigo_alumno : codigo_alumno,
             puntaje_total : puntaje_total,
             ultimo_puntaje : ultimo_puntaje,
