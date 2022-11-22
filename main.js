@@ -1,5 +1,5 @@
-var solicitar_lista=  (event) => {
-        fetch('https://6ojobc33j0.execute-api.us-east-1.amazonaws.com/prod/participacion/listar')
+var solicitar_lista_EC=  (event) => {
+        fetch('https://4glinllb9b.execute-api.us-east-1.amazonaws.com/prod/ec/listar')
         .then(r => r.json())
         .then(json => {
             var participaciones = json.participaciones
@@ -19,13 +19,15 @@ var solicitar_lista=  (event) => {
                 var cell3 = row.insertCell(2);
                 var cell4 = row.insertCell(3);
                 var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
     
 
                 cell1.innerHTML = c;
-                cell2.innerHTML = participaciones[index].codigo;
-                cell3.innerHTML = participaciones[index].nombre;
-                cell4.innerHTML = participaciones[index].puntos;  
-                cell5.innerHTML = participaciones[index].fecha;           
+                cell2.innerHTML = participaciones[index].codigo_curso;
+                cell3.innerHTML = participaciones[index].codigo_alumno;
+                cell4.innerHTML = participaciones[index].puntaje_total;  
+                cell5.innerHTML = participaciones[index].ultimo_puntaje;
+                cell6.innerHTML = participaciones[index].fecha_ultimo_puntaje;           
                 
             }
 
@@ -42,19 +44,21 @@ if(document.forms[0]){
     event.preventDefault();
 
 
-        var codigo = document.getElementById("codigo").value;
-        var nombre = document.getElementById("nombre").value;
-        var puntos = document.getElementById("puntos").value;
-        var fecha = document.getElementById("fecha").value;
+        var codigo_curso = document.getElementById("codigo_curso").value;
+        var codigo_alumno = document.getElementById("codigo_alumno").value;
+        var puntaje_total = document.getElementById("puntaje_total").value;
+        var ultimo_puntaje = document.getElementById("ultimo_puntaje").value;
+        var fecha_ultimo_puntaje = document.getElementById("fecha_ultimo_puntaje").value;
 
         var data = {
-            codigo : parseInt(codigo),
-            nombre : nombre,
-            puntos : puntos,
-            fecha : fecha
+            codigo_curso : parseInt(codigo_curso),
+            codigo_alumno : codigo_alumno,
+            puntaje_total : puntaje_total,
+            ultimo_puntaje : ultimo_puntaje,
+            fecha_ultimo_puntaje : fecha_ultimo_puntaje
         }  
 
-        fetch('https://6ojobc33j0.execute-api.us-east-1.amazonaws.com/prod/participacion/crear',{
+        fetch('https://4glinllb9b.execute-api.us-east-1.amazonaws.com/prod/ec/crear',{
             method : "POST",
             body: JSON.stringify(data)
         })
