@@ -5,7 +5,8 @@ def lambda_handler(event, context):
     table = dynamodb.Table('TablaT')
     response = table.scan()
     items = response['Items']
+    
     return {
         'statusCode': 200,
-        'participaciones': items
+        'tarea': items
     }
