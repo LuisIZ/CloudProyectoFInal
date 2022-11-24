@@ -1,13 +1,18 @@
+import json
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
 
 def lambda_handler(event, context):
+    # Entrada (json)
+    body = json.loads(event['Records'][0]['body'])
+    Message = json.loads(body['Message'])
+    
     # Entrada
-    var_codigo_curso = event['codigo_curso']
-    var_codigo_alumno = event['codigo_alumno']
-    var_puntaje_total = event['puntaje_total']
-    var_ultimo_puntaje = int(event['ultimo_puntaje'])
-    var_fecha_ultimo_puntaje = event['fecha_ultimo_puntaje']
+    var_codigo_curso = Message['codigo_curso']
+    var_codigo_alumno = Message['codigo_alumno']
+    var_puntaje_total = Message['puntaje_total']
+    var_ultimo_puntaje = int(Message['ultimo_puntaje'])
+    var_fecha_ultimo_puntaje = Message['fecha_ultimo_puntaje']
 
     # TablaEC
     dynamodb = boto3.resource('dynamodb')

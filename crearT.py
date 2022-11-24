@@ -1,12 +1,17 @@
+import json
 import boto3
 
 def lambda_handler(event, context):
+    # Entrada (json)
+    body = json.loads(event['Records'][0]['body'])
+    Message = json.loads(body['Message'])
+    
     # Entrada
-    var_codigo_curso = event['codigo_curso']
-    var_nombre_tarea = event['nombre_tarea']
-    var_descripcion = event['descripcion']
-    var_fecha_inicio = event['fecha_inicio']
-    var_fecha_limite = event['fecha_limite']
+    var_codigo_curso = Message['codigo_curso']
+    var_nombre_tarea = Message['nombre_tarea']
+    var_descripcion = Message['descripcion']
+    var_fecha_inicio = Message['fecha_inicio']
+    var_fecha_limite = Message['fecha_limite']
     
     # Proceso
     dynamodb = boto3.resource('dynamodb')
