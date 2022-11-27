@@ -21,7 +21,7 @@ def lambda_handler(event, context):
     sns_client = boto3.client('sns')
     response_sns = sns_client.publish(
         TopicArn = 'arn:aws:sns:us-east-1:466909036508:TemaNuevaParticipacion',
-        Subject = 'Nueva participacion',
+        Subject = "Nueva participacion",
         Message = json.dumps(participacion),
         MessageAttributes = {
             'codigo_curso': {'DataType': 'String', 'StringValue': var_codigo_curso },

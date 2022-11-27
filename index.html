@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Evaluacion Continua</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
 </head>
+
 <body>
     <div class="container">
         <div class="row">  
             <div class="col mt-3">
                 <h1 class="float-left">Tabla Evaluacion Continua</h1>
 
-                <a href="nuevoEC.html" class="btn btn-primary float-right">Nuevo</a> 
+                <a href="nuevoEC.html" class="btn btn-primary float-right">Nueva evaluacion continua</a> 
 
             </div>
             <div class="table-responsive">
@@ -32,7 +32,7 @@
                 <tbody id="table_body_ec">
                 </tbody>
                 </table>
-            </div>           
+            </div>
         </div>              
     </div>
     <script src="main.js"></script>    
@@ -43,13 +43,31 @@
 
     <br>
 
+    <div class="container">
+        <div class="row">
+           <div class="col mt-3">
+                <h2 class="float-left">
+                    <label for="idiomas">Idioma:&nbsp;&nbsp;&nbsp;</label>
+                </h2>
+                    <div class="col mt-2">
+                    <select id="idiomas" name="idiomas" class="float-left">
+                        <option value="es" selected>Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="fr">Francés</option>
+                        <option value="pt">Portugués (Brasil)</option>
+                    </select>
+                </div>
+                <button id="boton-traducir" class="btn btn-primary float-right">Traducir</button> 
+           </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">  
             <div class="col mt-3">
                 <h1 class="float-left">Tabla Tareas</h1>
 
-                <a href="nuevoT.html" class="btn btn-primary float-right">Nuevo</a> 
+                <a href="nuevoT.html" class="btn btn-primary float-right">Nueva tarea</a>
 
             </div>
             <div class="table-responsive">
@@ -70,6 +88,8 @@
             </div>           
         </div>              
     </div>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1261.0.min.js"></script>
+    <script src="traducir.js"></script> 
     <script src="main.js"></script>    
     <script>
         solicitar_lista_T();
